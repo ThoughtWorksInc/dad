@@ -3,6 +3,7 @@ cc_library(
     srcs = [],
     hdrs = [
         "dad.h",
+        "dad/value.h",
     ],
 )
 
@@ -12,7 +13,14 @@ cc_test(
         "dad_test.cc",
     ],
     deps = [
+        "dad",
         "@gtest",
         "@gtest//:gtest_main",
     ],
+)
+
+cc_binary(
+    name = "dad_example",
+    srcs = ["dad_example.cc"],
+    deps = ["dad"],
 )
